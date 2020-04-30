@@ -1,11 +1,17 @@
-def IsUnique(string) : #Space complexity O(1), time complexity O(len(string))
+def IsUnique(string) : #SC O(len(string)), TC O(len(string))
 
-    for i in range(1, len(string)) :
+    if len(string) == len(set(string)) : #SC O(len(string)), TC O(len(string))
 
-        if string[i] != string[0] :
+        return True #SC O(1), TC O(1)
 
-            return False
+    return False #SC O(1), TC O(1)
 
-    return True 
 
-print(IsUnique('ssssa'))
+print(IsUnique('eaio'))
+
+print(IsUnique('aaattv'))
+
+print(IsUnique('qwwwdr'))
+
+print(IsUnique('qwertyuiop'))
+
