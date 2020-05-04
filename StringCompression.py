@@ -33,5 +33,12 @@ def StringCompression(string) : #SC O(1), TC O(len(string))
         return string[:len(string) - 1]
 
 
-print(StringCompression('aabcccccaaa'))
+print(StringCompression('aabcccccaaa'))# a2b1c5a3
+
+print(StringCompression('qwe'))# qwe
+
+print(StringCompression('qqqweeee'))# q3w1e4
+
+
+
 

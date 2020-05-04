@@ -43,4 +43,14 @@ def OneAway(string1, string2) : #SC O(1), TC O(len(string1)^2) or O(len(string2)
         return False #TC O(1)
 
 
-print(OneAway('pale', 'jkfdgnlfjgn'))
+print(OneAway('pale', 'jkfdgnlfjgn')) #False
+
+print(OneAway('pale', 'ple')) #True
+
+print(OneAway('pales', 'pale')) #True
+
+print(OneAway('pale', 'bale')) #True
+
+print(OneAway('pale', 'bake')) #False
+
+

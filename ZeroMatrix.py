@@ -1,39 +1,63 @@
-def ZeroMatrix(matrix) :
+def ZeroMatrix(matrix) : #SC O(len(matrix)*len(matrix[0])), TC O(len(matrix)*len(matrix[0]))
 
-    ZeMat = []
+    ZeroRows = []
 
-    AuxRow = []
+    ZeroColumns = []
+
+    #Encontrar filas con cero
 
     for i in range(len(matrix)) :
 
-        for j in range(len(matrix[0])) :
+        if 0 in matrix[i] :
 
-            if matrix[i][j] == 0 :
+            ZeroRows += [i]
+                
+    #Encontrar columnas con cero
 
-                if len(AuxRow) != 0 :
+    for i in range(len(matrix[0])) :
 
-                    AuxRow = []
+        for j in range(len(matrix)) :
 
-                for x in range(len(matrix[0])) :
+            if matrix[j][i] == 0 :
 
-                    AuxRow += [0]
+                ZeroColumns += [i]
 
                 break
 
-            else :
 
-                AuxRow += [matrix[i][j]]
+    #Hacer cero filas que contengan cero
 
-            
-        ZeMat += [AuxRow]
+    for fila in ZeroRows :
 
-        AuxRow = []
+        for col in range(len(matrix[0])) :
+
+            matrix[fila][col] = 0
+
+    
+    #Hacer cero columnas que contengan cero
+
+    for col in ZeroColumns :
+
+        for fila in range(len(matrix)) :
+
+            matrix[fila][col] = 0
 
 
-    return ZeMat
+    return matrix
+
 
 
 print(ZeroMatrix([[1, 2, 3], [4, 0, 6], [7, 8, 9]]))
+# 103
+# 000
+# 709
+
+print(ZeroMatrix([[1, 0, 2], [0, 4, 6], [7, 8, 0]]))
+
+# 000
+# 000
+# 000
+
 
 
 

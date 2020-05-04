@@ -34,4 +34,12 @@ def PalindromePermutation(string) : #Space complexity O(1), time complexity O(le
                 return True
 
 
-print(PalindromePermutation('Tact Coa'))
+print(PalindromePermutation('Tact Coa'))#True
+
+print(PalindromePermutation('civic'))#True
+
+print(PalindromePermutation('ivicc'))#True
+
+print(PalindromePermutation('civil'))#False
+
+print(PalindromePermutation('livci'))#False

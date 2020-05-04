@@ -21,4 +21,11 @@ def RotateMatrix(matrix) : #SC O(len(matrix)^2), TC O(len(matrix)^2)
     return RotMat #SC O(1), TC O(1)
 
 print(RotateMatrix([['a', 'b'], ['c', 'd']]))
+# ca
+# db
+
+print(RotateMatrix([['q', 'w', 'e'], ['r', 't', 'y'], ['u', 'i', 'o']]))
+# urq
+# itw
+# oye
 
