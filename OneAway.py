@@ -1,46 +1,72 @@
-def OneAway(string1, string2) : #SC O(1), TC O(len(string1)^2) or O(len(string2)^2) wichever is bigger
+def OneAway(string1, string2) : 
 
-    if len(string1) == len(string2) + 1 : #TC O(1)
+    #Insertion or remotion of character
 
-        for i in string1 : #TC O(len(string1)^2)
+    if len(string1) != len(string2) :
 
-            if string2 == string1.replace(i, '') : #TC O(len(string1))
+        if len(string1) < len(string2) :
 
-                return True #TC O(1)
+            Bigger = string2
 
-        return False #TC O(1)
+            Smaller = string1
 
-    elif len(string2) == len(string1) + 1 : #TC O(1)
+        else :
 
-        for i in string2 : #TC O(len(string2)^2)
+            Bigger = string1
 
-            if string1 == string2.replace(i, '') : #TC O(len(string2))
+            Smaller = string2
 
-                return True #TC O(1)
 
-        return False #TC O(1)
+        if len(Bigger) - len(Smaller) != 1 :
 
-    elif len(string1) == len(string2) : #TC O(1)
+            return False
 
-        if string1 == string2 : #TC O(1)
+        
+        else :
 
-            return False #TC O(1)
+            if Smaller in Bigger :
 
-        for i in range(len(string1)) : #TC O(len(string1)^2)
+                return True
 
-            if string1[i] != string2[i] : #TC O(1)
 
-                for j in range(i + 1, len(string1)) : #TC O(len(string1))
+            else :
 
-                    if string1[j] != string2[j] : #TC O(1)
+                for i in range(len(Bigger)) :
 
-                        return False #TC O(1)
+                    RemFrBig = Bigger[0 : i] + Bigger[i + 1 : ]
 
-                return True #TC O(1)
+                    if Smaller in RemFrBig :
 
-    else : #TC O(1)
+                        return True
 
-        return False #TC O(1)
+                
+                return False
+
+
+    #Replacement of character
+
+    else :
+
+        if string1 == string2 :
+
+            return False
+
+
+        count = 0
+
+        for i in range(len(string1)) :
+
+            if string1[i] != string2[i] :
+
+                count += 1
+
+            if count > 1 :
+
+                return False
+
+        
+        return True
+
 
 
 print(OneAway('pale', 'jkfdgnlfjgn')) #False
@@ -52,5 +78,9 @@ print(OneAway('pales', 'pale')) #True
 print(OneAway('pale', 'bale')) #True
 
 print(OneAway('pale', 'bake')) #False
+
+print(OneAway('aaaa', 'aaa')) #True
+
+
 
 

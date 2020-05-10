@@ -10,11 +10,11 @@ def CheckPermutation(s1, s2) : # SC O(len(s2) + len(s1)), TC O(len(s2) + len(s1)
 
     return False
 
-print(CheckPermutation('semen', 'nemes'))
+print(CheckPermutation('semen', 'nemes'))#True
 
-print(CheckPermutation('aab', 'aba'))
+print(CheckPermutation('aab', 'aba'))#True
 
-print(CheckPermutation('wewf', 'wef'))
+print(CheckPermutation('wewf', 'wef'))#False
 
-print(CheckPermutation('frg', 'XxX'))
+print(CheckPermutation('frg', 'XxX'))#False
 
